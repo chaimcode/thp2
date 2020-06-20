@@ -16,6 +16,8 @@ Once Your Kali VM is Up and Running
 ●	Make postgresql database start on boot
 	○	update-rc.d postgresql enable
 ●	Start and stop the Metasploit service (this will setup the database.yml file for you)
+    ○	msfdb init
+    ○	msfconsole
 	○	service metasploit start
 	○	service metasploit stop
 ●	Install gedit
