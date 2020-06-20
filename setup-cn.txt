@@ -16,6 +16,8 @@ Once Your Kali VM is Up and Running
 ●	Make postgresql database start on boot
 	○	update-rc.d postgresql enable
 ●	Start and stop the Metasploit service (this will setup the database.yml file for you)
+    ○	msfdb init
+    ○	msfconsole
 	○	service metasploit start
 	○	service metasploit stop
 ●	Install gedit
@@ -35,12 +37,14 @@ Once Your Kali VM is Up and Running
 Tool Installation
 The Backdoor Factory:
 ●	Patch PE, ELF, Mach-O binaries with shellcode.
+●   对 PE, ELF, Mach-O 等二进制文件注入 shellcode
 ●	git clone https://github.com/secretsquirrel/the-backdoor-factory /opt/the-backdoor-factory
 ●	cd the-backdoor-factory
 ●	./install.sh
 
 HTTPScreenShot
 ●	HTTPScreenshot is a tool for grabbing screenshots and HTML of large numbers of websites.
+●   HTTPScreenShot 工具实现屏幕截图和大量的网站网页抓取
 ●	pip install selenium
 ●	git clone https://github.com/breenmachine/httpscreenshot.git /opt/httpscreenshot
 ●	cd /opt/httpscreenshot
@@ -53,6 +57,7 @@ HTTPScreenShot
 
 SMBExec
 ●	A rapid psexec style attack with samba tools.
+●   使用 samba 工具的一种快速 psexec 类型攻击
 ●	git clone https://github.com/pentestgeek/smbexec.git /opt/smbexec
 ●	cd /opt/smbexec && ./install.sh
 ●	Select 1 - Debian/Ubuntu and derivatives
@@ -62,6 +67,7 @@ SMBExec
 ●	After compilation, select 5 to exit
 Masscan
 ●	This is the fastest Internet port scanner. It can scan the entire Internet in under six minutes.
+●   快速的互联网端口扫描工具, 能够在 6 分钟扫描整个互联网
 ●	apt-get install git gcc make libpcap-dev
 ●	git clone https://github.com/robertdavidgraham/masscan.git /opt/masscan
 ●	cd /opt/masscan
@@ -70,6 +76,7 @@ Masscan
 
 Gitrob
 ●	Reconnaissance tool for GitHub organizations
+●   一种针对 github 组织的探测工具
 ●	git clone https://github.com/michenriksen/gitrob.git /opt/gitrob
 ●	gem install bundler
 ●	service postgresql start
@@ -82,36 +89,44 @@ Gitrob
 
 CMSmap
 ●	CMSmap is a python open source CMS (Content Management System) scanner that automates the process of detecting security flaws
+●   基于 python 开发的开源内容管理系统扫描工具, 实现对安全漏洞自动扫描
 ●	git clone https://github.com/Dionach/CMSmap /opt/CMSmap
 
 WPScan
 ●	WordPress vulnerability scanner and brute-force tool
+●   wordpress 漏洞扫描工具和暴力破解工具
 ●	git clone https://github.com/wpscanteam/wpscan.git /opt/wpscan
 ●	cd /opt/wpscan && ./wpscan.rb --update
 
 Eyewitness
 ●	EyeWitness is designed to take screenshots of websites, provide some server header info, and identify default credentials if possible.
+●   EyeWitness 工具实现网站截图, 搜集服务器报头信息和判断网站是否采用默认口令
 ●	git clone https://github.com/ChrisTruncer/EyeWitness.git /opt/EyeWitness
 
 Printer Exploits
 ●	Contains a number of commonly found printer exploits
+●   包括大量常用的打印机漏洞利用工具
 ●	git clone https://github.com/MooseDojo/praedasploit /opt/praedasploit
 
 SQLMap
 ●	SQL Injection tool
+●   SQL 注入工具
 ●	git clone https://github.com/sqlmapproject/sqlmap /opt/sqlmap
 
 Recon-ng
 ●	A full-featured web reconnaissance framework written in Python
+●   一个功能齐全的网站探测框架, 使用 python 编写
 ●	git clone https://bitbucket.org/LaNMaSteR53/recon-ng.git /opt/recon-ng
 
 Discover Scripts
 ●	Custom bash scripts used to automate various pentesting tasks.
+●   定制化的 bash 脚本, 自动化处理各种渗透任务
 ●	git clone https://github.com/leebaird/discover.git /opt/discover
 ●	cd /opt/discover && ./update.sh
 
 BeEF Exploitation Framework
 ●	A cross-site scripting attack framework
+●   一个跨站脚本攻击框架
 ●	cd /opt/
 ●	wget https://raw.github.com/beefproject/beef/a6a7536e/install-beef
 ●	chmod +x install-beef
@@ -119,10 +134,12 @@ BeEF Exploitation Framework
 
 Responder
 ●	A LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. Responder will be used to gain NTLM challenge/response hashes
+●   一个 LLMNR, NBT-NS 和 MDNS 协议工具工具, 包括 HTTP/SMB/MSSQL/FTP/LDAP 诱骗认证方法, 支持 NTLMv1/NTLMv2/LMv2, 扩展的 NTLMSSP 和基本 HTTP 认证协议. Responder 用于获取 NTLM 挑战/应答哈希值
 ●	git clone https://github.com/SpiderLabs/Responder.git /opt/Responder
 
 The Hacker Playbook 2 - Custom Scripts
 ●	A number of custom scripts written by myself for The Hacker Playbook 2.
+●   一些自定义的脚本
 ●	git clone https://github.com/cheetz/Easy-P.git /opt/Easy-P
 ●	git clone https://github.com/cheetz/Password_Plus_One /opt/Password_Plus_One
 ●	git clone https://github.com/cheetz/PowerShell_Popup /opt/PowerShell_Popup
@@ -138,20 +155,24 @@ The Hacker Playbook 2 - Forked Versions
 
 DSHashes:
 ●	Extracts user hashes in a user-friendly format for NTDSXtract
+●   从 NTDSXtract 中提取用户用于理解的哈希值
 ●	wget http://ptscripts.googlecode.com/svn/trunk/dshashes.py -O /opt/NTDSXtract/dshashes.py
 
 SPARTA:
 ●	A python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase.
+●   一个基于 Python 脚本图形化应用程序, 在扫描和枚举阶段, 辅助渗透测试人员简化网络架构的渗透测试工作
 ●	git clone https://github.com/secforce/sparta.git /opt/sparta
 ●	apt-get install python-elixir
 ●	apt-get install ldap-utils rwho rsh-client x11-apps finger
 
 NoSQLMap
 ●	A automated pentesting toolset for MongoDB database servers and web applications.
+●   用于 MongoDB 数据库和网站应用程序的自动化渗透测试工具集
 ●	git clone https://github.com/tcstool/NoSQLMap.git /opt/NoSQLMap
 
 Spiderfoot
 ●	Open Source Footprinting Tool
+●   开源的指纹检测工具
 ●	mkdir /opt/spiderfoot/ && cd /opt/spiderfoot
 ●	wget http://sourceforge.net/projects/spiderfoot/files/spiderfoot-2.3.0-src.tar.gz/download
 ●	tar xzvf download
@@ -164,53 +185,63 @@ Spiderfoot
 
 WCE
 ●	Windows Credential Editor (WCE) is used to pull passwords from memory
+●   Windows 凭证编辑器(Windows Credential Editor, WCE), 用于从内存中读取密码
 ●	Download from: http://www.ampliasecurity.com/research/windows-credentials-editor/ and save to /opt/. For example:
 	○	wget www.ampliasecurity.com/research/wce_v1_4beta_universal.zip
 	○	mkdir /opt/wce && unzip wce_v1* -d /opt/wce && rm wce_v1*.zip
 
 Mimikatz
 ●	Used for pulling cleartext passwords from memory, Golden Ticket, skeleton key and more
+●   用于从内存获取明文密码, 金票据和万能秘钥等
 ●	Grab the newest release from https://github.com/gentilkiwi/mimikatz/releases/latest
 	○	cd /opt/ && wget http://blog.gentilkiwi.com/downloads/mimikatz_trunk.zip
 	○	unzip -d ./mimikatz mimikatz_trunk.zip
 
 SET
 ●	Social Engineering Toolkit (SET) will be used for the social engineering campaigns
+●   社会工程工具集, 主要用于社会工程攻击
 ●	git clone https://github.com/trustedsec/social-engineer-toolkit/ /opt/set/
 ●	cd /opt/set && ./setup.py install
 
 PowerSploit (PowerShell)
 ●	PowerShell scripts for post exploitation
+●   PowerShell 脚本用户后渗透测试
 ●	git clone https://github.com/mattifestation/PowerSploit.git /opt/PowerSploit
 ●	cd /opt/PowerSploit && wget https://raw.githubusercontent.com/obscuresec/random/master/StartListener.py && wget https://raw.githubusercontent.com/darkoperator/powershell_scripts/master/ps_encoder.py
 
 Nishang (PowerShell)
 ●	Collection of PowerShell scripts for exploitation and post exploitation
+●   PowerShell 漏洞利用和后山头测试脚本汇总
 ●	git clone https://github.com/samratashok/nishang /opt/nishang
 
 Veil-Framework
 ●	A red team toolkit focused on evading detection. It currently contains Veil-Evasion for generating AV-evading payloads, Veil-Catapult for delivering them to targets, and Veil-PowerView for gaining situational awareness on Windows domains. Veil will be used to create a python based Meterpreter executable.
+●   红队工具集用于规避杀毒软件检测. 目前包括 Veil-Evasion 用于生成规避杀毒软件净荷, Veill-Captapult 投送净荷到目标, Veil-PowerView 获取 Windows 域网络拓扑信息. Ceil 框架也可用于创建基于 Python 脚本的 Meterpreter 可执行程序
 ●	git clone https://github.com/Veil-Framework/Veil /opt/Veil
 ●	cd /opt/Veil/ && ./Install.sh -c
 
 Burp Suite Pro
 ●	Web Penetration Testing Tool
+●   web 渗透测试工具集
 ●	Download: http://portswigger.net/burp/proxy.html. I would highly recommend that you buy the professional version. It is well worth the $299 price tag.
 
 ZAP Proxy Pro
 ●	OWASP ZAP: An easy-to-use integrated penetration testing tool for discovering vulnerabilities in web applications.
+●   OWASP ZAP: 一个使用方便的继承渗透测试工具, 用于挖掘网站应用程序漏洞
 ●	Download from: https://code.google.com/p/zaproxy/wiki/Downloads?tm=2
 ●	*Included by default in Kali Linux (owasp-zap)
 
 Fuzzing Lists (SecLists)
 ●	These are scripts to use with Burp to fuzz parameters
+●   用于配置 Burp 渗透测试参数
 ●	git clone https://github.com/danielmiessler/SecLists.git /opt/SecLists
 
 Password Lists
 ●	For the different password lists, see the section: Special Teams - Cracking, Exploits, and Tricks
 
-Net-Creds Network Parsing 
+Net-Creds Network Parsing
 ●	Parse PCAP files for username/passwords
+●   分析 PCAP 文件, 获取用户名/密码
 ●	git clone https://github.com/DanMcInerney/net-creds.git /opt/net-creds
 
 Installing Firefox Add-ons
@@ -221,10 +252,12 @@ Installing Firefox Add-ons
 
 Wifite
 ●	Attacks against WiFi networks
+●   WiFi 网络攻击工具
 ●	git clone https://github.com/derv82/wifite /opt/wifite
 
 WIFIPhisher
 ●	Automated phishing attacks against WiFi networks
+●   WiFi 网络自动化钓鱼攻击
 ●	git clone https://github.com/sophron/wifiphisher.git /opt/wifiphisher
 
 Phishing (Optional):
